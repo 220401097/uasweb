@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Tempatkan CSS di sini atau gunakan file style.css */
+        /* Gaya untuk .photo-album-container dan .photo-album */
+        .photo-album-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .photo-album {
+            display: none;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+
+        .photo-album.active {
+            display: flex;
+        }
+
+        .photo-album img {
+            width: calc(25% - 10px);
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navigasi">
+    <div class="logo">
+        <h2>Biodataku</h2>
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a href="#banner">Hai</a></li>
+            <li><a href="#box-pendidikan">Pendidikan</a></li>
+            <li><a href="#pengalaman">Pengalaman</a></li>
+            <li><a href="#Portofolio">Portofolio</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="banner" id="banner">
+    <img src="gambar/wp2.jpg" alt="wp">
+    <h1><span></span></h1>
+    <p>Ayo Masuki Dunia Saya yang Penuh Warna</p>
+</div>
+
+<div class="box-pendidikan" id="box-pendidikan">
+    <img src="gambar/umri.png" alt="umri">
+    <div class="text">
+        <h3>UNIVERSITAS MUHAMMADIYAH RIAU</h3>
+        <p>Saya sedang menempuh pendidikan di UMRI fakultas ilmu komputer prodi teknik informatika</p>
+    </div>
+</div>
+
+<section class="pengalaman" id="pengalaman">
+    <h4>Pengalaman</h4>
+    <div class="admin">
+        <h1>ADMIN SERVICE</h1>
+        <img src="gambar/nusantara.jpg" alt="kerja">
+        <p>Sebagai Admin Service, saya mengelola dan menginput data kendaraan yang sedang diservis, memastikan semua informasi tercatat dengan akurat untuk mendukung operasional dan kepuasan pelanggan.</p>
+    </div>
+
+    <div class="admin">
+        <h1>ADMIN PENJUALAN</h1>
+        <img src="gambar/bosch.jpg" alt="kerja">
+        <p>Sebagai Admin Penjualan di Bosch, saya bertanggung jawab untuk melakukan follow-up pelanggan, menginput data penjualan, dan menangani berbagai tugas administratif. Peran saya mendukung proses penjualan dan memastikan kepuasan pelanggan.</p>
+    </div>
+</section>
+
+<div class="data-diri">
+    <h1>BLOG</h1>
+    <p>halo rekan-rekan perkenalkan nama saya luvenia.</p>
+    <p>Saya memiliki hobi memotret yang saya geluti dengan penuh passion. Saya sering berbagi hasil karya fotografi saya di galeri Pinterest saya. Kunjungi galeri saya di Pinterest untuk melihat koleksi foto-foto menarik yang saya buat.</p>
+    <a href="https://pin.it/5gnAeusZg" class="button"><i class="fa-solid fa-download"></i>Kunjungi galeri saya di Pinterest     </a>
+    <div class="photo-album-container">
+        <img src="gambar/aku.png" alt="Foto Utama" class="main-photo">
+    </div>
+</div>
+
+<section class="support">
+    <div class="vsc">
+        <h1>VSC</h1>
+        <img src="gambar/vsc.jpg" alt="logo">
+        <p><strong>Visual Studio Code (VSC):</strong> Editor kode yang ringan dan fleksibel, ideal untuk pengembangan web. VSC menawarkan fitur seperti pemantauan langsung, penyorotan sintaksis, dan integrasi Git, serta dukungan ekstensi yang luas untuk mempermudah penulisan HTML dan CSS.</p>
+    </div>
+
+    <div class="html">
+        <h1>HTML</h1>
+        <img src="gambar/html.jpg" alt="logo">
+        <p><strong>HTML (HyperText Markup Language):</strong> Bahasa standar untuk membuat dan menyusun halaman web. HTML menggunakan tag untuk menentukan struktur konten seperti teks, gambar, dan tautan, serta elemen-elemen lainnya di halaman web.</p>
+    </div>
+
+    <div class="css">
+        <h1>CSS</h1>
+        <img src="gambar/css.jpg" alt="logo">
+        <p><strong>CSS (Cascading Style Sheets):</strong> Bahasa yang digunakan untuk mendesain dan mengatur tampilan halaman web yang ditulis dalam HTML. CSS memungkinkan pengaturan warna, font, tata letak, dan elemen visual lainnya untuk menciptakan desain web yang menarik dan responsif.</p>
+    </div>
+</section>
+
+<script>
+    // Fungsi untuk mengubah tampilan album foto
+    function toggleAlbum() {
+        var album = document.getElementById('photo-album');
+        album.classList.toggle('active'); // Menambahkan atau menghapus kelas 'active' untuk menampilkan/menyembunyikan album
+    }
+
+    // Menambahkan event listener untuk klik pada foto utama
+    document.querySelector('.main-photo').addEventListener('click', toggleAlbum);
+</script>
+
+<section id="Portofolio">
+    <div class="wrapper">
+        <h4>Portofolio <span></h4>
+        
+    </div>
+        <ul class="project-list">
+
+            <li class="project-item active" data-filter-item data-category="web development">
+                <a href="#">
+                    <figure class="project-img">
+                        <div class="project-item-icon-box">
+                            <ion-icon name="eye-outline"></ion-icon>
+                        </div>
+                        <img src="gambar/finance.jpg" alt="Finance" loading="lazy">
+                    </figure>
+                    <h3 class="project-title">Finance</h3>
+                    
+                </a>
+            </li>
+        
+            <li class="project-item active" data-filter-item data-category="web development">
+                <a href="#">
+                    <figure class="project-img">
+                        <div class="project-item-icon-box">
+                            <ion-icon name="eye-outline"></ion-icon>
+                        </div>
+                        <img src="gambar/dabes.png" alt="Orizon" loading="lazy">
+                    </figure>
+                    <h3 class="project-title">Database</h3>
+                    
+                </a>
+            </li>
+        
+            <li class="project-item active" data-filter-item data-category="web design">
+                <a href="#">
+                    <figure class="project-img">
+                        <div class="project-item-icon-box">
+                            <ion-icon name="eye-outline"></ion-icon>
+                        </div>
+                        <img src="gambar/web gambar.jpeg" alt="Fundo" loading="lazy">
+                    </figure>
+                    <h3 class="project-title">Desainer  Web</h3>
+                    
+                </a>
+            </li>
+        </section>
+</body>
+</html>                 
